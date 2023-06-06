@@ -1,0 +1,23 @@
+{% extends 'add_form_template.html' %}
+
+{% block title %} App||Add-Students{% endblock %}
+
+{% block content %}
+
+<h1>Register New Students Here</h1>
+<form action="{{url_for('admin.add_students')}}" method="post" id="addStudents">
+    <input type="text" name="student_name" id="student_name" required placeholder="Student Name">
+    <input type="text" name="matric_number" id="matric_number" required placeholder="Matric Number">
+    <input type="email" name="email" id="email" required placeholder="Email">
+    <input type="tel" name="tel_num" id="tel_num" required placeholder="Phone Number">
+    <input type="text" name="department_id" id="department_id" required placeholder="Department Id">
+    <input type="hidden" name="student_image" id="student_image">
+    <video id="video" width="340" height="340" autoplay></video>
+    <button type="button" id="capture">Capture Image</button>
+    <canvas id="canvas" width="340" height="340" style="display: none;"></canvas>
+    <button type="submit" id="submit-button">Submit</button>
+    <script src="{{url_for('admin.static', filename = 'js/student.js')}}"></script>
+    {{message}}
+</form>
+
+{% endblock %}

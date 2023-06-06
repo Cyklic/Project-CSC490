@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff</title>
+</head>
+<body>
+    Staff Attendance 
+    {% for row in rows %}
+        {% for device in devices %}
+            {% if row.bluetooth_devices_signal_id == device[0]%}
+                {% if row.Today == 0 %}
+                    {% if row.TodayTime == 1 %}
+                        <form action="{{url_for('staff.attendance_page')}}" method="POST">
+                            <input type="hidden" name="time_in" id="time_in" value="{{row.time_in}}">
+                            <input type="hidden" name="time_out" id="time_out" value="{{row.time_out}}">
+                            <input type="hidden" name="timetable_id" id="timetable_id" value="{{row.timetable_id}}">
+                            <button type="submit">Take Attendance</button>
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <p>{{message}}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}     
+                        </form> 
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+</head>
+<body>
+    <h1>This is a login page for student</h1>
+    <h2>Login with your Email and Password</h2>
+
+    <form action="{{url_for('student.index')}}" method="post">
+        <input type="email" name="email" id="email" required placeholder="Email">
+        <input type="password" name="student_password" id="student_password" required placeholder="Password">
+        <input type="hidden" name="student_image" id="student_image">
+        <video id="video" width="340" height="340" autoplay></video>
+        <button type="button" id="capture">Capture Image</button>
+        <canvas id="canvas" width="340" height="340" style="display: none;"></canvas>
+        <button type="submit">Login</button>
+        <script src="{{url_for('student.static', filename='js/studentAuth.js')}}"></script>
+    </form>
+</body>
+</html>

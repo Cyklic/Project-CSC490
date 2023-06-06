@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login</title>
+</head>
+<body>
+    <h1>This is a login page for staff</h1>
+    <h2>Login with your Email and Password</h2>
+
+    <form action="{{url_for('staff.index')}}" method="post">
+        <input type="email" name="email" id="email" required placeholder="Email">
+        <input type="password" name="staff_password" id="staff_password" required placeholder="Password">
+        <input type="hidden" name="staff_image" id="staff_image">
+        <video id="video" width="340" height="340" autoplay></video>
+        <button type="button" id="capture">Capture Image</button>
+        <canvas id="canvas" width="340" height="340" style="display: none;"></canvas>
+        <button type="submit">Login</button>
+        <script src="{{url_for('staff.static', filename='js/staffAuth.js')}}"></script>
+    </form>
+</body>
+</html>
