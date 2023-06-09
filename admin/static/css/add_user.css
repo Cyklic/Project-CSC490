@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* .add-student-form{
+
+} */
+
+h1{
+    text-transform: uppercase;
+    font-size: 50px;
+    padding-top: 40px;
+    color: rgb(1, 63, 17);
+    font-weight: bold;
+}
+
+.staff-head-form-container, .student-head-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.staff-main-form-container-text, .student-main-form-container-text{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.add-staff-form, .add-student-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-details-holder{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.input-details-holder button{
+    margin-top: 65px;
+    display: block;
+}
+
+.video-capture-button-div{
+    margin: 0 20px;
+}
+
+.submit-button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-staff-form input, .add-student-form input{
+    padding: 13px 22px;
+    border-radius: 12px;
+    border: 1px solid black;
+    background-color: rgb(221, 218, 218);
+    width: 400px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.video-image-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.add-staff-form button, .add-student-form button{
+    padding: 15px 25px;
+    background-color: rgb(1, 63, 17);
+    color: whitesmoke;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+}
+
+.add-staff-form button:hover, .add-student-form button:hover{
+    transform: scale(1.09);
+}
+
+.add-staff-form button:active, .add-student-form button:active{
+    transform: scale(.95);
+}
+

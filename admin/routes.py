@@ -65,6 +65,7 @@ def add_staff():
             dept_id = request.form.get('department_id')
             staff_image = request.form.get('staff_image')
             staff_type = request.form.get('staff_type')
+            # print(staff_image)
             
             conn = connection()
             cur = conn.cursor()

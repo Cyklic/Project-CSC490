@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student</title>
+    <link rel="stylesheet" href="{{url_for('student.static', filename='css/stud_attend.css')}}">
+    <title>Student Attendance</title>
 </head>
 <body>
-    Student Attendance 
-
+    <h1>Attendance for Student</h1>
+    <!-- Student Attendance  -->
     {% for row in rows %}
         {% for device in devices %}
             {% if row.bluetooth_devices_signal_id == device[0]%}
@@ -23,7 +24,7 @@
                                 {% if messages %}
                                     {% for message in messages %}
                                         <p>{{message}}</p>
-                                    {% endfor %}
+                                    {% endfor %} 
                                 {% endif %}
                             {% endwith %}     
                         </form> 

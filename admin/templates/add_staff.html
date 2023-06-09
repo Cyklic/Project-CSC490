@@ -3,21 +3,33 @@
 {% block title %} App||Add-Staffs{% endblock %}
 
 {% block content %}
-
-<h1>Register New Staff Here</h1>
-<form action="{{url_for('admin.add_staff')}}" method="post" id="addStaff">
-    <input type="text" name="staff_name" id="staff_name" required placeholder="Staff Name">
-    <input type="email" name="email" id="email" required placeholder="Email">
-    <input type="tel" name="tel_num" id="tel_num" required placeholder="Phone Number">
-    <input type="text" name="department_id" id="department_id" required placeholder="Department Id">
-    <input type="text" name="staff_type" id="staff_type" required placeholder="Staff Type">
-    <input type="hidden" name="staff_image" id="staff_image">
-    <video id="video" width="340" height="340" autoplay></video>
-    <button type="button" id="capture">Capture Image</button>
-    <canvas id="canvas" width="340" height="340" style="display: none;"></canvas>
-    <button type="submit" id="submit-button">Submit</button>
-    <script src="{{url_for('admin.static', filename = 'js/staff.js')}}"></script>
-    {{message}}
-</form>
-
+<div class="staff-head-form-container">
+    <div class="staff-main-form-container">
+        <div class="staff-main-form-container-text">
+            <h1>Register New Staff Here</h1>
+        </div>
+        <form action="{{url_for('admin.add_staff')}}" method="post" id="addStaff" class="add-staff-form">
+            <div class="input-details-holder">
+                <input type="text" name="staff_name" id="staff_name" required placeholder="Staff Name">
+                <input type="email" name="email" id="email" required placeholder="Email">
+                <input type="tel" name="tel_num" id="tel_num" required placeholder="Phone Number">
+                <input type="text" name="department_id" id="department_id" required placeholder="Department Id">
+                <input type="text" name="staff_type" id="staff_type" required placeholder="Staff Type">
+                <input type="hidden" name="staff_image" id="staff_image">
+                <div class="submit-button-div">
+                    <button type="submit" id="submit-button">SUBMIT</button>
+                </div>
+            </div>
+            <div class="video-capture-button-div">
+                <div class="video-image-holder" id="video-image-holder">
+                    <video id="video" width="340" height="340" autoplay></video>
+                    <button type="button" id="capture">CAPTURE IMAGE</button>
+                    <canvas id="canvas" width="340" height="340" style="display: none;"></canvas>
+                </div>
+            </div>
+            <script src="{{url_for('admin.static', filename = 'js/staff.js')}}"></script>
+            {{message}}
+        </form>
+    </div>
+</div>
 {% endblock %}

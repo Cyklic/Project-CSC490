@@ -2,6 +2,7 @@ var video = document.getElementById('video');
 var capture = document.getElementById('capture');
 var captuedImage = document.getElementById('captured-image');
 var captuedImage = document.createElement('img');
+var capturedImageHolder = document.getElementById('video-image-holder')
 var imageHidden = document.getElementById('student_image');
 var stream
 var imageData
@@ -19,12 +20,11 @@ navigator.mediaDevices.getUserMedia({ video: true})
 capture.addEventListener('click', function() {
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    canvas.width = 340;
+    canvas.height = 260;
     context.drawImage(video, 0, 0, canvas.width, canvas.width);
     imageData = canvas.toDataURL('image/png');
     var imageDataRes = imageData.replace("data:image/png;base64,", "");
-
     imageHidden.value = imageDataRes;
 
     video.srcObject = null
@@ -34,5 +34,5 @@ capture.addEventListener('click', function() {
 
     captuedImage.src = imageData;
     captuedImage.style.display = 'block';
-    document.body.appendChild(captuedImage)
+    capturedImageHolder.appendChild(captuedImage)
 })

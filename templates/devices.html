@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Index</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 </head>
 <body>
-    <h1>Bluetooth Devices</h1>
+    <h1>Select Login Option</h1>
 
-    <a href="{{url_for('student.index')}}">Go to student login</a>
-    <a href="{{url_for('staff.index')}}">Go to staff login</a>
+    <div class="auth-options">
+        <a href="{{url_for('student.index')}}">
+            <span>
+                Go to student login
+            </span>
+        </a>
+        <a href="{{url_for('staff.index')}}">
+            <span>
+                Go to staff login
+            </span>
+        </a>
+    </div>
 </body>
 </html>
